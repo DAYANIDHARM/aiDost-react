@@ -1,0 +1,44 @@
+.ui-container {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  pointer-events: auto;
+}
+
+.chat-bubble {
+  background: white;
+  padding: 14px 20px;
+  border-radius: 18px;
+  max-width: 320px;
+  font-size: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.chat-bubble.active {
+  border: 2px solid #00e5ff;
+}
+
+.mic-btn {
+  border: none;
+  background: #0b132b;
+  color: white;
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.mic-btn:hover {
+  transform: scale(1.05);
+}
+
+.mic-btn.listening {
+  background: #00e5ff;
+  color: #0b132b;
+}
