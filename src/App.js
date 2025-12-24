@@ -4,14 +4,16 @@ import UI from "./components/UI";
 import useVoiceInput from "./hooks/useVoiceInput";
 
 export default function App() {
-  const { listening, transcript, startListening } = useVoiceInput();
+  const { listening, transcript, aiReply, startListening } = useVoiceInput();
   const [message, setMessage] = useState("Hi, I am aiDost 👋");
 
   useEffect(() => {
-    if (transcript) {
-      setMessage(transcript);
+    if (aiReply) {
+      setMessage(aiReply); // Show AI response
+    } else if (transcript) {
+      setMessage(transcript); // Show user speech
     }
-  }, [transcript]);
+  }, [transcript, aiReply]);
 
   return (
     <div style={{ width: "100vw", height: "100vh" }}>
